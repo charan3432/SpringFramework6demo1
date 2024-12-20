@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+                                                                        <!--    Bean for Alien Class-->
+<!--    <bean id="alien" class="com.charan.Alien" scope="prototype">-->
+    <bean id="alien" class="com.charan.Alien" autowire="byType">
+<!--        <property name="age" value="22"/>-->
+<!--        <property name="lap" ref="lap1"/>-->
+
+<!--        <constructor-arg name="lap" ref="lap1" index="1"/>-->
+<!--        <constructor-arg name="age" value="22" index="0"/>-->
+
+<!--        <property name="com" ref="desk1"/>-->
+        <property name="age" value="22"/>
+
+    </bean>
+
+                                    <!-- Bean for Laptop class-->
+    <bean id="lap1" class="com.charan.Laptop" lazy-init="true"/>
+
+                                    <!--    Bean for Desktop class-->
+    <bean id="desk1" class="com.charan.Desktop" lazy-init="true" primary="true"/>
+</beans>
